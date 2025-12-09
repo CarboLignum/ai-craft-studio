@@ -63,10 +63,12 @@
       border: 0;
     }
 
-    /* ТЕКСТОВЫЕ БЛОКИ */
-    .content {
-      width: 100%;
-      margin: 12px 0 0;
+   /* ТЕКСТОВЫЕ БЛОКИ */
+.content {
+  width: 100vw;          /* фон на всю ширину экрана */
+  margin: 12px 0 0;
+  position: relative;    /* чтобы фон привязался к этому блоку */
+  overflow: hidden;
 }
 
 /* ВНУТРЕННИЙ БЛОК С ТЕКСТОМ */
@@ -74,22 +76,24 @@
   width: 100%;
   max-width: 980px;
   padding: 12px 24px 40px;
-  margin: 0 auto;
+  margin: 0 auto;        /* центрируем текст по ширине */
+  position: relative;
+  z-index: 1;            /* текст поверх видео */
 }
-    }
 
-    .bg-video {
-     position: fixed;
-     inset: 0;
-     z-index: -1;
+.bg-video {
+  position: absolute;    /* фон только под этим блоком */
+  inset: 0;
+  z-index: 0;
 }
 
 .bg-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
+
     .block {
       margin-bottom: 32px;
     }
@@ -207,6 +211,7 @@
 
 </body>
 </html>
+
 
 
 
