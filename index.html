@@ -31,7 +31,7 @@
 
     /* ЛОГО */
     .logo-block {
-      padding: 12px 0;      /* 12 сверху, 12 снизу */
+      padding-top: 12px;        /* отступ от верха страницы */
       display: flex;
       justify-content: center;
       width: 100%;
@@ -44,9 +44,10 @@
       height: auto;
     }
 
-    /* ВИДЕО */
+    /* ВИДЕО (YouTube) */
     .hero-video {
       width: 100%;
+      margin-top: 12px;         /* расстояние от лого до видео */
     }
 
     .video-wrap {
@@ -63,36 +64,43 @@
       border: 0;
     }
 
-   /* ТЕКСТОВЫЕ БЛОКИ */
-.content {
-  width: 100vw;          /* фон на всю ширину экрана */
-  margin: 12px 0 0;
-  position: relative;    /* чтобы фон привязался к этому блоку */
-  overflow: hidden;
-}
+    /* БЛОК С ТЕКСТОМ + ФОН-ВИДЕО */
+    .content {
+      position: relative;
+      width: 100%;
+      margin-top: 12px;         /* расстояние от видео до текста */
+      overflow: hidden;
+    }
 
-/* ВНУТРЕННИЙ БЛОК С ТЕКСТОМ */
-.content-inner {
-  width: 100%;
-  max-width: 980px;
-  padding: 12px 24px 40px;
-  margin: 0 auto;        /* центрируем текст по ширине */
-  position: relative;
-  z-index: 1;            /* текст поверх видео */
-}
+    /* фоновое видео тянется на всю ширину окна,
+       центрируем его относительно страницы */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      transform: translateX(-50%);
+      z-index: 0;
+      pointer-events: none;     /* чтобы клик не перехватывало */
+    }
 
-.bg-video {
-  position: absolute;    /* фон только под этим блоком */
-  inset: 0;
-  z-index: 0;
-}
+    .bg-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.bg-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    /* сам текстовый контейнер по центру */
+    .content-inner {
+      position: relative;
+      z-index: 1;               /* текст поверх видео */
+      width: 100%;
+      max-width: 980px;
+      padding: 12px 24px 40px;
+      margin: 0 auto;
+    }
 
     .block {
       margin-bottom: 32px;
@@ -104,7 +112,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 12px;
-      color: #f97316; /* лёгкий акцент (оранжевый) */
+      color: #f97316; /* оранжевый акцент */
     }
 
     .block p {
@@ -140,6 +148,7 @@
       text-decoration: underline;
     }
 
+    /* мобильная адаптация */
     @media (max-width: 768px) {
       .logo-block img {
         max-width: 60vw;
@@ -153,22 +162,15 @@
   </style>
 </head>
 <body>
-  <div class="bg-video">
-        <video autoplay muted loop playsinline>
-            <source src="bg.mp4" type="video/mp4" />
-        </video>
-    </div>
   <div class="page">
     <!-- ЛОГО -->
     <header class="logo-block">
-      <!-- здесь используется файл logo.png из корня репозитория -->
       <img src="logo.png" alt="AI CRAFT STUDIO" />
     </header>
 
-    <!-- ВИДЕО -->
+    <!-- ВИДЕО (YouTube) -->
     <main class="hero-video">
       <div class="video-wrap">
-        <!-- Вставлен твой ролик. Если поменяешь видео — просто замени ID в ссылке. -->
         <iframe
           src="https://www.youtube.com/embed/y48XU9FuxDw?rel=0&modestbranding=1&playsinline=1"
           title="AI CRAFT STUDIO – Cinematic AI Video &amp; Photo &amp; Music Showreel"
@@ -176,46 +178,43 @@
           allowfullscreen
         ></iframe>
       </div>
+    </main>
 
-      <!-- ТЕКСТ НИЖЕ ВИДЕО -->
-<section class="content">
-    
-    <div class="content-inner">
+    <!-- ТЕКСТ + ФОН-ВИДЕО -->
+    <section class="content">
+      <div class="bg-video">
+        <video autoplay muted loop playsinline>
+          <source src="bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="content-inner">
         <div class="block">
-            <div class="block-title">What I do</div>
-            <p>Cinematic AI-made video, photo and music for social media and promo.</p>
-            <ul>
-                <li>AI video, photo and music for Instagram / TikTok / YouTube.</li>
-                <li>AI visualisation of ideas, commercials and presentations.</li>
-                <li>Social media management and automation — any formats.</li>
-            </ul>
+          <div class="block-title">What I do</div>
+          <p>Cinematic AI-made video, photo and music for social media and promo.</p>
+          <ul>
+            <li>AI video, photo and music for Instagram / TikTok / YouTube.</li>
+            <li>AI visualisation of ideas, commercials and presentations.</li>
+            <li>Social media management and automation — any formats.</li>
+          </ul>
         </div>
 
         <div class="block">
-            <div class="block-title">Pricing</div>
-            <p class="price-line">Production cost: €50 for every 5 seconds of video.</p>
-            <p class="price-line">200-second package: €2000.</p>
-            <p>Production schedule is agreed separately.</p>
+          <div class="block-title">Pricing</div>
+          <p class="price-line">Production cost: €50 for every 5 seconds of video.</p>
+          <p class="price-line">200-second package: €2000.</p>
+          <p>Production schedule is agreed separately.</p>
         </div>
 
         <div class="block">
-            <div class="block-title">Contact</div>
-            <div class="contacts">
-                <p>WhatsApp: message me</p>
-                <p>Email: yourname (at) domain (dot) com</p>
-            </div>
+          <div class="block-title">Contact</div>
+          <div class="contacts">
+            <p>WhatsApp: message me</p>
+            <p>Email: yourname (at) domain (dot) com</p>
+          </div>
         </div>
-    </div>
-</section>
-
-
+      </div>
+    </section>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
