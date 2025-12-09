@@ -66,11 +66,18 @@
     /* ТЕКСТОВЫЕ БЛОКИ */
     .content {
       width: 100%;
-      max-width: 980px;
-      padding: 12px 24px 40px;   
-      margin: 12px auto 0; /* добавили 12px сверху снаружи */
+      margin: 12px 0 0;        /* только отступ сверху 12px */
       position: relative;
-      overflow: hidden;
+      overflow: hidden;        /* нужно, чтобы фон не вылезал */
+}
+
+/* ВНУТРЕННИЙ БЛОК С ТЕКСТОМ */
+.content-inner {
+  width: 100%;
+  max-width: 980px;
+  padding: 12px 24px 40px; /* как было */
+  margin: 0 auto;         /* центрируем по ширине */
+}
     }
 
     .bg-video {
@@ -137,7 +144,7 @@
         max-height: none;
       }
 
-      .content {
+      .content-inner {
         padding: 24px 16px 32px;
       }
     }
@@ -171,35 +178,38 @@
         </video>
     </div>
 
-    <div class="block">
-        <div class="block-title">What I do</div>
-        <p>Cinematic AI-made video, photo and music for social media and promo.</p>
-        <ul>
-            <li>AI video, photo and music for Instagram / TikTok / YouTube.</li>
-            <li>AI visualisation of ideas, commercials and presentations.</li>
-            <li>Social media management and automation — any formats.</li>
-        </ul>
-    </div>
+    <div class="content-inner">
+        <div class="block">
+            <div class="block-title">What I do</div>
+            <p>Cinematic AI-made video, photo and music for social media and promo.</p>
+            <ul>
+                <li>AI video, photo and music for Instagram / TikTok / YouTube.</li>
+                <li>AI visualisation of ideas, commercials and presentations.</li>
+                <li>Social media management and automation — any formats.</li>
+            </ul>
+        </div>
 
-    <div class="block">
-        <div class="block-title">Pricing</div>
-        <p class="price-line">Production cost: €50 for every 5 seconds of video.</p>
-        <p class="price-line">200-second package: €2000.</p>
-        <p>Production schedule is agreed separately.</p>
-    </div>
+        <div class="block">
+            <div class="block-title">Pricing</div>
+            <p class="price-line">Production cost: €50 for every 5 seconds of video.</p>
+            <p class="price-line">200-second package: €2000.</p>
+            <p>Production schedule is agreed separately.</p>
+        </div>
 
-    <div class="block">
-        <div class="block-title">Contact</div>
-        <div class="contacts">
-            <!-- СЮДА ВСТАВИШЬ СВОЙ НОМЕР WHATSAPP -->
-            <p>WhatsApp: message me</p>
-            <p>Email: yourname (at) domain (dot) com</p>
+        <div class="block">
+            <div class="block-title">Contact</div>
+            <div class="contacts">
+                <p>WhatsApp: message me</p>
+                <p>Email: yourname (at) domain (dot) com</p>
+            </div>
         </div>
     </div>
 </section>
 
+
 </body>
 </html>
+
 
 
 
