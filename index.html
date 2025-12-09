@@ -29,8 +29,9 @@
       align-items: center;
     }
 
+    /* ЛОГО */
     .logo-block {
-      padding: 32px 0 16px;
+      padding: 24px 0 12px;
       display: flex;
       justify-content: center;
       width: 100%;
@@ -38,35 +39,92 @@
 
     .logo-block img {
       display: block;
-      max-width: 40vw;
-      max-height: 20vh;
+      max-width: 32vw;
+      max-height: 18vh;
       height: auto;
     }
 
+    /* ВИДЕО */
     .hero-video {
       width: 100%;
     }
 
     .video-wrap {
       width: 100vw;
-      max-width: 100vw;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
     }
 
     .video-wrap iframe {
       display: block;
-      width: 100vw;
-      max-width: 100vw;
-      aspect-ratio: 16 / 9;
-      border: none;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ТЕКСТОВЫЕ БЛОКИ */
+    .content {
+      width: 100%;
+      max-width: 900px;
+      padding: 32px 24px 40px;
+      margin: 0 auto;
+    }
+
+    .block {
+      margin-bottom: 32px;
+    }
+
+    .block-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #f97316; /* лёгкий акцент (оранжевый) */
+    }
+
+    .block p {
+      line-height: 1.5;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .block ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .block li {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .price-line {
+      font-weight: 500;
+    }
+
+    .contacts p {
+      margin-bottom: 4px;
+    }
+
+    .whatsapp-link {
+      color: #22c55e;
+      text-decoration: none;
+    }
+
+    .whatsapp-link:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-      .logo-block {
-        padding-top: 24px;
-      }
       .logo-block img {
-        max-width: 70vw;
+        max-width: 60vw;
         max-height: none;
+      }
+
+      .content {
+        padding: 24px 16px 32px;
       }
     }
   </style>
@@ -75,19 +133,59 @@
   <div class="page">
     <!-- ЛОГО -->
     <header class="logo-block">
+      <!-- здесь используется файл logo.png из корня репозитория -->
       <img src="logo.png" alt="AI CRAFT STUDIO" />
     </header>
 
     <!-- ВИДЕО -->
     <main class="hero-video">
       <div class="video-wrap">
+        <!-- Вставлен твой ролик. Если поменяешь видео — просто замени ID в ссылке. -->
         <iframe
-          src="https://www.youtube.com/embed/y48XU9FuxDw?rel=0&modestbranding=1&playsinline=1"
-          title="AI CRAFT STUDIO — showreel"
+          src="https://www.youtube.com/embed/y48XU9Fux0w?rel=0&modestbranding=1&playsinline=1"
+          title="AI CRAFT STUDIO – Cinematic AI Video &amp; Photo &amp; Music Showreel"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
       </div>
+
+      <!-- ТЕКСТ НИЖЕ ВИДЕО -->
+      <section class="content">
+        <div class="block">
+          <div class="block-title">What I do</div>
+          <p>Cinematic AI-made video, photo and music for social media and promo.</p>
+          <ul>
+            <li>– AI video, photo and music for Instagram / TikTok / YouTube.</li>
+            <li>– AI visualisation of ideas, commercials and presentations.</li>
+            <li>– Social media management and automation — any formats.</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-title">Pricing</div>
+          <p class="price-line">Production cost: €50 for every 5 seconds of video.</p>
+          <p class="price-line">200-second package: €2000.</p>
+          <p>Production schedule is agreed separately.</p>
+        </div>
+
+        <div class="block">
+          <div class="block-title">Contact</div>
+          <div class="contacts">
+            <!-- СЮДА ВСТАВИШЬ СВОЙ НОМЕР WHATSAPP -->
+            <p>
+              WhatsApp:
+              <a
+                class="whatsapp-link"
+                href="https://wa.me/XXXXXXXXXXX"
+                target="_blank"
+                >message me</a
+              >
+            </p>
+            <!-- Почта некопируемая: меняешь текст в скобках под себя -->
+            <p>Email: yourname (at) domain (dot) com</p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </body>
