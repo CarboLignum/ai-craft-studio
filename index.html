@@ -66,24 +66,22 @@
     /* ТЕКСТОВЫЕ БЛОКИ */
     .content {
       width: 100%;
-      margin: 12px 0 0;        /* только отступ сверху 12px */
-      position: relative;
-      overflow: hidden;        /* нужно, чтобы фон не вылезал */
+      margin: 12px 0 0;
 }
 
 /* ВНУТРЕННИЙ БЛОК С ТЕКСТОМ */
 .content-inner {
   width: 100%;
   max-width: 980px;
-  padding: 12px 24px 40px; /* как было */
-  margin: 0 auto;         /* центрируем по ширине */
+  padding: 12px 24px 40px;
+  margin: 0 auto;
 }
     }
 
     .bg-video {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
+     position: fixed;
+     inset: 0;
+     z-index: -1;
 }
 
 .bg-video video {
@@ -151,6 +149,11 @@
   </style>
 </head>
 <body>
+  <div class="bg-video">
+        <video autoplay muted loop playsinline>
+            <source src="bg.mp4" type="video/mp4" />
+        </video>
+    </div>
   <div class="page">
     <!-- ЛОГО -->
     <header class="logo-block">
@@ -172,12 +175,7 @@
 
       <!-- ТЕКСТ НИЖЕ ВИДЕО -->
 <section class="content">
-    <div class="bg-video">
-        <video autoplay muted loop playsinline>
-            <source src="bg.mp4" type="video/mp4" />
-        </video>
-    </div>
-
+    
     <div class="content-inner">
         <div class="block">
             <div class="block-title">What I do</div>
@@ -209,6 +207,7 @@
 
 </body>
 </html>
+
 
 
 
