@@ -71,7 +71,7 @@
     .content {
       position: relative;
       width: 100%;
-      margin-top: 12px;         /* расстояние от видео до текста */
+      margin-top: 24px;         /* расстояние от видео до текста */
       overflow: hidden;
     }
 
@@ -103,19 +103,21 @@
       max-width: 840px;
       padding: 40px 24px 56px;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.35); /* лёгкий черный с прозрачностью */
+      background: rgba(0, 0, 0, 0.25); /* лёгкий черный с прозрачностью */
+      border-radius: 12px;
+      backdrop-filter: blur(4px); /* можно убрать, если не зайдёт */
     }
 
     .block {
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .block-title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: #f97316; /* оранжевый акцент */
     }
 
@@ -220,5 +222,6 @@
   </div>
 </body>
 </html>
+
 
 
