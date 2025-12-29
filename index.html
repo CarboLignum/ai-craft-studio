@@ -53,6 +53,12 @@
       margin-top: 12px;         /* расстояние от лого до видео */
     }
 
+        /* ВТОРОЙ ЭКРАН С ВИДЕО (ФЕСТИВАЛЬ) */
+    .festival-video {
+      width: 100%;
+      margin-top: 24px;         /* отступ сверху как у текста */
+    }
+
     .video-wrap {
       width: 100vw;
       max-width: 100%;
@@ -208,11 +214,23 @@
             <p>Email: carbo.lignum (at) gmail (dot) com</p>
           </div>
         </div>
+      </div>            <!-- закрыли .content-inner -->
+    </section>          <!-- ВОТ ЭТА СТРОКА НУЖНА: закрываем <section class="content"> --> 
+        <!-- ВТОРОЙ ЭКРАН: ВИДЕО ФЕСТИВАЛЯ -->
+    <section class="festival-video">
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/1-dxpbCdoMI?rel=0&modestbranding=1&playsinline=1"
+          title="AI CRAFT STUDIO – Festival Prototype"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
     </section>
   </div>
 </body>
 </html>
+
 
 
 
